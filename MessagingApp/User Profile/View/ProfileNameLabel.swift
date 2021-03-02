@@ -16,29 +16,32 @@ final class ProfileNameLabel: UILabel {
       guard let words = text?
               .components(separatedBy: .whitespaces)
       else { return }
+        
       let joinedWords = words.joined(separator: "\n")
+        
       guard text != joinedWords else { return }
       
       DispatchQueue.main.async { [weak self] in
         self?.text = joinedWords
       }
-      
     }
     
   }
   // Метод инициализатора принимает параметры для установки своих свойств и вызывает init (frame :) суперкласса. Затем вы вызываете setTextAttributes (), чтобы настроить некоторые свойства UILabel
   init(fullName: String? = "Full Name") {
     super.init(frame: .zero)
+    
     setTextAttributes()
     text = fullName
   }
   
-  // Реализуйте требуемый инициализатор для инициализации Interface Builder ProfileNameLabel
+  // Требуемый инициализатор для инициализации Interface Builder ProfileNameLabel
   required init?(coder: NSCoder) {
     super.init(coder: coder)
+    
   }
   
-  // Наконец, setTextAttributes устанавливает numberOfLines , textAlignment и шрифт характеристики.
+  // Устанавливает numberOfLines , textAlignment и шрифт характеристики.
   private func setTextAttributes() {
     numberOfLines = 0
     textAlignment = .center

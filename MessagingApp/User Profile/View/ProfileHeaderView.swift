@@ -9,18 +9,15 @@ import UIKit
 
 final class ProfileHeaderView: UIView {
     
-    // 1
     private let profileImageView = ProfileImageView(borderShape: .squircle)
     private let leftSpacerView = UIView()
     private let rightSpacerView = UIView()
     private let fullNameLabel = ProfileNameLabel()
     
-    // 2
     private let messageButton = UIButton.createSystemButton(withTitle: "Message")
     private let callButton = UIButton.createSystemButton(withTitle: "Call")
     private let emailButton = UIButton.createSystemButton(withTitle: "Email")
     
-    // 3
     private lazy var profileImageStackView = UIStackView(arrangedSubviews: [
         leftSpacerView,
         profileImageView,
@@ -32,26 +29,31 @@ final class ProfileHeaderView: UIView {
         stackView.distribution = .fill
         stackView.axis = .vertical
         stackView.spacing = 16
+        
         return stackView
     }()
     
     private lazy var actionStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews:
-                                        [messageButton, callButton, emailButton])
+        let stackView = UIStackView(arrangedSubviews: [messageButton,
+                                                       callButton,
+                                                       emailButton])
         stackView.distribution = .fillEqually
+        
         return stackView
     }()
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews:
-                                        [profileStackView, actionStackView])
+        let stackView = UIStackView(arrangedSubviews: [profileStackView,
+                                                       actionStackView])
         stackView.axis = .vertical
         stackView.spacing = 16
+        
         return stackView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+
         setupStackView ()
         backgroundColor = .systemGroupedBackground
     }
@@ -61,11 +63,10 @@ final class ProfileHeaderView: UIView {
     }
     
     private func setupStackView() {
-        // 1
+        
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // 2
         NSLayoutConstraint.activate(
             [
                 stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -88,7 +89,8 @@ final class ProfileHeaderView: UIView {
         fullNameLabel.setContentHuggingPriority( UILayoutPriority(251), for: NSLayoutConstraint.Axis.horizontal)
         fullNameLabel.setContentHuggingPriority(UILayoutPriority(251),for: NSLayoutConstraint.Axis.vertical)
         
-        fullNameLabel.setContentCompressionResistancePriority(UILayoutPriority(751),for: NSLayoutConstraint.Axis.vertical)
+        fullNameLabel.setContentCompressionResistancePriority(UILayoutPriority(751),
+                                                              for: NSLayoutConstraint.Axis.vertical)
         messageButton.setContentCompressionResistancePriority( UILayoutPriority(751),
                                                                for: NSLayoutConstraint.Axis.horizontal)
     }
@@ -103,4 +105,5 @@ private extension UIButton {
         
         return button
     }
+    
 }

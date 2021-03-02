@@ -125,7 +125,6 @@
 		7B4D066F25ECF8350098A111 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
-				7B4D067325ECF88E0098A111 /* Storyboards */,
 				7B4D067225ECF8820098A111 /* Model */,
 				7B4D067025ECF8680098A111 /* Controller */,
 			);
@@ -146,13 +145,6 @@
 				7B4D067425ECF8E70098A111 /* TabBarTitle.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		7B4D067325ECF88E0098A111 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		7B4D067B25ED00860098A111 /* User Profile */ = {
