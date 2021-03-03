@@ -44,6 +44,7 @@ final class ContactListTableViewController: UITableViewController {
     }
     
     // MARK: - Setup Contact Preview
+    
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let contact = contacts[indexPath.row]
         contactPreviewView.nameLabel.text = contact.name

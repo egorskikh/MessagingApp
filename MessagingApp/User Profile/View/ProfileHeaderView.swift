@@ -89,10 +89,8 @@ final class ProfileHeaderView: UIView {
         fullNameLabel.setContentHuggingPriority( UILayoutPriority(251), for: NSLayoutConstraint.Axis.horizontal)
         fullNameLabel.setContentHuggingPriority(UILayoutPriority(251),for: NSLayoutConstraint.Axis.vertical)
         
-        fullNameLabel.setContentCompressionResistancePriority(UILayoutPriority(751),
-                                                              for: NSLayoutConstraint.Axis.vertical)
-        messageButton.setContentCompressionResistancePriority( UILayoutPriority(751),
-                                                               for: NSLayoutConstraint.Axis.horizontal)
+        fullNameLabel.setContentCompressionResistancePriority(UILayoutPriority(751), for: NSLayoutConstraint.Axis.vertical)
+        messageButton.setContentCompressionResistancePriority( UILayoutPriority(751), for: NSLayoutConstraint.Axis.horizontal)
     }
     
 }
